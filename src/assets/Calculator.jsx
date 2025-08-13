@@ -7,7 +7,7 @@ function Calculator() {
 
 
   const [input, setInput] = useState(""); // Stores the user input
-  const [liveResult, setliveResult] = useState("second") // stores live result
+  const [liveResult, setliveResult] = useState("") // stores live result
 
   // Function to handle button clicks
   const handleClick = (value) => {
