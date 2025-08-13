@@ -26,7 +26,7 @@ function Calculator() {
 
 
   return (
-    <div className="flex flex-col bg-[#1E1E1E] rounded-2xl w-80% md:w-[400px] border-2 border-blue-900 h-[430px] p-2.5">
+    <div className="flex flex-col ju bg-[#1E1E1E] rounded-2xl w-80% md:w-[400px] border-2 border-blue-900 h-[430px] p-2.5">
         <div className='w-[100%] bg-[#555555] rounded overflow-hidden  h-[100px] flex items-center justify-end px-4 text-white text-4xl'>
         {input || "0"}
         </div>
