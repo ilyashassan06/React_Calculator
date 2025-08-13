@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className=' flex h-[100vh] justify-center items-center'>
+    <div className=' flex h-[100vh] w-[100vw] justify-center my-10 '>
 
     <Calculator/>
      </div>

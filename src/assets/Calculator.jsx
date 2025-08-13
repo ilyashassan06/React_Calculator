@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import { evaluate } from "mathjs"; // safer eval
 
 function Calculator() {
 
@@ -11,7 +12,8 @@ function Calculator() {
   const handleClick = (value) => {
     if (value === "=") {
       try {
-        setInput(eval(input).toString()); // Evaluate the expression
+          const result = evaluate(input); // safely calculate
+        setInput(result.toString());
       } catch {
         setInput("Error"); // If invalid input
       }
@@ -26,22 +28,22 @@ function Calculator() {
 
 
   return (
-    <div className="flex flex-col ju bg-[#1E1E1E] rounded-2xl w-80% md:w-[400px] border-2 border-blue-900 h-[430px] p-2.5">
+    <div className="flex flex-col  bg-[#1E1E1E] rounded-2xl w-[95%]  md:w-[400px] border-2 border-blue-900 h-[530px] p-2.5">
         <div className='w-[100%] bg-[#555555] rounded overflow-hidden  h-[100px] flex items-center justify-end px-4 text-white text-4xl'>
         {input || "0"}
         </div>
         <div className="grid grid-cols-4 grid-rows-5 gap-2 py-2.5 ">
   {[
-    "C", "%", "/", "*",
+    "AC", "%", "/", "*",
     "7", "8", "9", "-",
     "4", "5", "6", "+",
     "1", "2", "3", "=",
-    "AC", "0", "."
+    "C", "0", "."
   ].map((btn, index) => (
     <button
       key={index}
       onClick={() => handleClick(btn)}
-      className={`p-2 h-14 rounded-2xl flex items-center justify-center text-3xl ${
+      className={`p-2 h-18 rounded-2xl flex items-center justify-center text-3xl ${
         btn === "C"
           ? "bg-[#F4A825] text-black"
           : btn === "="
